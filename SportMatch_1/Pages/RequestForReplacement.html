@@ -1,0 +1,198 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="../Scripts/ajaxCalls.js"></script>
+    <script>
+
+
+        //---------------------Validation--------------------------
+
+        function checkReplacementDate() {
+            var todayDate = new Date().toISOString().substr(0, 10);
+            if (this.value < todayDate) {
+                console.log(this.validity)
+                this.validity.valid = false;
+                this.setCustomValidity('תאריך ההחלפה לא יכול להיות תאריך שעבר');
+            }
+            else {
+                this.validity.valid = true;
+                this.setCustomValidity('');
+            }
+        }
+
+        //function checkReplacementTime() {
+        //    var todayDate = new Date().toISOString().substr(0, 10);
+        //    if (this.value < todayDate) {
+        //        console.log(this.validity)
+        //        this.validity.valid = false;
+        //        this.setCustomValidity('תאריך ההחלפה לא יכול להיות תאריך שעבר');
+        //    }
+        //    else {
+        //        this.validity.valid = true;
+        //        this.setCustomValidity('');
+        //    }
+        //}
+
+        
+
+
+        $(document).ready(function () {
+            ajaxCall("GET", "../api/Qualification", "", successGetQualification, errorGetQualification);
+            ajaxCall("GET", "../api/DifficultyLevel", "", successGetDifficultyLevel, errorGetDifficultyLevel);
+            ajaxCall("GET", "../api/Language", "", successGetLanguage, errorGetLanguage);
+            ajaxCall("GET", "../api/Population", "", successGetPopulation, errorGetPopulation)
+            $("#pForm").submit(f1);
+            $("#btn").click(Request);
+            $("#rdate").on("blur", checkReplacementDate);
+
+
+        });
+        function f1() {
+            return false;
+        }
+
+        function successGetQualification(data) {
+            let arrNames = "<option value =''>בחר סוג שיעור</option>";
+            for (k in data) {
+                arrNames += `<option value = ${data[k].TypeCode}>${data[k].TypeName} </option>`;
+            }
+            $('#classn').append(arrNames);
+        }
+
+        function errorGetQualification(err) {
+            console.log(err);
+        }
+
+        function successGetDifficultyLevel(data) {
+            let arrNames = "<option value =''>בחר רמת קושי</option>";
+            for (k in data) {
+                arrNames += `<option value = ${data[k].LevelCode}>${data[k].LevelName} </option>`;
+            }
+            $('#dlevel').append(arrNames);
+        }
+
+        function errorGetDifficultyLevel(err) {
+            console.log(err);
+        }
+
+        function successGetLanguage(data) {
+            let arrNames = "<option value =''>בחר שפה</option>";
+            for (k in data) {
+                arrNames += `<option value = ${data[k].LanCode}>${data[k].LanName} </option>`;
+            }
+            $('#lang').append(arrNames);
+        }
+
+        function errorGetLanguage(err) {
+            console.log(err);
+        }
+
+        function successGetPopulation(data) {
+            let arrNames = "<option value =''>בחר אוכלוסיית יעד</option>";
+            for (k in data) {
+                arrNames += `<option value = ${data[k].Code}>${data[k].PName} </option>`;
+            }
+            $('#pop').append(arrNames);
+        }
+
+        function errorGetPopulation(err) {
+            console.log(err);
+        }
+
+
+
+
+        function Request() {
+            var userDetails = JSON.parse(localStorage["userDetails"]);
+            var branchCode = String(userDetails.Code);
+            console.log(branchCode);
+            var publishDateTime = getTodayDateTime();
+            var contactName = document.getElementById("cname").value;
+            //var className = new Date ($('#bdate').val());
+            var classTypeCode = document.getElementById("classn").value;
+            var fromHour = document.getElementById("fhour").value;
+            var toHour = document.getElementById("thour").value;
+            var replacementDate = new Date($('#rdate').val()).toISOString().substr(0, 10);
+            var classDescription = document.getElementById("desc").value;
+            var comments = document.getElementById("comments").value;
+            var difficultyLevelCode = document.getElementById("dlevel").value;
+            var maxPrice = document.getElementById("price").value;
+            var languageCode = document.getElementById("lang").value;
+            var populationCode = document.getElementById("pop").value;
+
+
+            request = {
+                PublishDateTime: publishDateTime,
+                ContactName: contactName,
+                BrnachCode: branchCode, 
+                ClassTypeCode: classTypeCode,
+                FromHour: fromHour,
+                ToHour: toHour,
+                ReplacementDate: replacementDate,
+                ClassDescription: classDescription,
+                Comments: comments,
+                DifficultyLevelCode: difficultyLevelCode,
+                MaxPrice: maxPrice,
+                LanguageCode: languageCode,
+                PopulationCode: populationCode
+            }
+            console.log(request);
+            ajaxCall("POST", "../api/RequestForReplacement", JSON.stringify(request), successSignInRequest, errorSignInRequest);
+        }
+
+
+        function successSignInRequest(data) {
+            alert("success");
+
+        }
+
+        function errorSignInRequest(err) {
+            alert("error");
+            console.log(err);
+        }
+
+
+        function getTodayDateTime() {
+            var d = new Date().toISOString();
+            //var today = [d.getDate(),
+            //d.getMonth() + 1, d.getFullYear()].join('/') + ' ' + [d.getHours(), d.getMinutes()].join(':');
+            return d;
+        }
+
+
+    </script>
+</head>
+<body>
+
+    <form id="pForm" action="/action_page.php">
+        <label for="fname">שם איש קשר</label><br>
+        <input type="text" id="cname" name="cname" required><br>
+        <label for="lname">סוג שיעור:</label><br>
+        <select id="classn" required></select><br>
+        <label for="fname">משעה:</label><br>
+        <input type="time" id="fhour" name="fhour" min="00:00" max="23:00" required><br>
+        <label for="fname">עד שעה:</label><br>
+        <input type="time" id="thour" name="thour" min="00:00" max="23:00" required><br>
+        <label for="fname">תאריך ההחלפה:</label><br>
+        <input type="date" id="rdate" name="rdate" required ><br>
+        <label for="lname">תיאור שיעור:</label><br>
+        <input type="text" id="desc" name="desc"><br>
+        <label for="lname">הערות:</label><br>
+        <input type="text" id="comments" name="comments"><br>
+        <label for="fname">רמת קושי:</label><br>
+        <select id="dlevel" required></select><br>
+        <label for="fname">שכר לשעה:</label><br>
+        <input type="text" id="price" name="price" min="1" required><br>
+        <label for="fname">שפות:</label><br>
+        <select id="lang" required></select><br>
+        <label for="fname">אוכלוסיית יעד:</label><br>
+        <select id="pop" required></select><br><br>
+
+        <input id="btn" type="submit" value="Submit">
+    </form>
+</body>
+</html>

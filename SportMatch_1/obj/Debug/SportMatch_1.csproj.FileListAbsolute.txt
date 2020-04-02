@@ -1,0 +1,194 @@
+c:\users\lidor\source\repos\SportMatch_1\SportMatch_1\bin\ApplicationInsights.config
+c:\users\lidor\source\repos\SportMatch_1\SportMatch_1\bin\SportMatch_1.dll.config
+c:\users\lidor\source\repos\SportMatch_1\SportMatch_1\bin\SportMatch_1.dll
+c:\users\lidor\source\repos\SportMatch_1\SportMatch_1\bin\SportMatch_1.pdb
+c:\users\lidor\source\repos\SportMatch_1\SportMatch_1\bin\Antlr3.Runtime.dll
+c:\users\lidor\source\repos\SportMatch_1\SportMatch_1\bin\Microsoft.AI.Agent.Intercept.dll
+c:\users\lidor\source\repos\SportMatch_1\SportMatch_1\bin\Microsoft.AI.DependencyCollector.dll
+c:\users\lidor\source\repos\SportMatch_1\SportMatch_1\bin\Microsoft.AI.PerfCounterCollector.dll
+c:\users\lidor\source\repos\SportMatch_1\SportMatch_1\bin\Microsoft.AI.ServerTelemetryChannel.dll
+c:\users\lidor\source\repos\SportMatch_1\SportMatch_1\bin\Microsoft.AI.Web.dll
+c:\users\lidor\source\repos\SportMatch_1\SportMatch_1\bin\Microsoft.AI.WindowsServer.dll
+c:\users\lidor\source\repos\SportMatch_1\SportMatch_1\bin\Microsoft.ApplicationInsights.dll
+c:\users\lidor\source\repos\SportMatch_1\SportMatch_1\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+c:\users\lidor\source\repos\SportMatch_1\SportMatch_1\bin\Microsoft.Web.Infrastructure.dll
+c:\users\lidor\source\repos\SportMatch_1\SportMatch_1\bin\Newtonsoft.Json.dll
+c:\users\lidor\source\repos\SportMatch_1\SportMatch_1\bin\System.Net.Http.Formatting.dll
+c:\users\lidor\source\repos\SportMatch_1\SportMatch_1\bin\System.Web.Helpers.dll
+c:\users\lidor\source\repos\SportMatch_1\SportMatch_1\bin\System.Web.Http.dll
+c:\users\lidor\source\repos\SportMatch_1\SportMatch_1\bin\System.Web.Http.WebHost.dll
+c:\users\lidor\source\repos\SportMatch_1\SportMatch_1\bin\System.Web.Mvc.dll
+c:\users\lidor\source\repos\SportMatch_1\SportMatch_1\bin\System.Web.Optimization.dll
+c:\users\lidor\source\repos\SportMatch_1\SportMatch_1\bin\System.Web.Razor.dll
+c:\users\lidor\source\repos\SportMatch_1\SportMatch_1\bin\System.Web.WebPages.Deployment.dll
+c:\users\lidor\source\repos\SportMatch_1\SportMatch_1\bin\System.Web.WebPages.dll
+c:\users\lidor\source\repos\SportMatch_1\SportMatch_1\bin\System.Web.WebPages.Razor.dll
+c:\users\lidor\source\repos\SportMatch_1\SportMatch_1\bin\WebGrease.dll
+c:\users\lidor\source\repos\SportMatch_1\SportMatch_1\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+c:\users\lidor\source\repos\SportMatch_1\SportMatch_1\bin\Newtonsoft.Json.xml
+c:\users\lidor\source\repos\SportMatch_1\SportMatch_1\bin\System.Net.Http.Formatting.xml
+c:\users\lidor\source\repos\SportMatch_1\SportMatch_1\bin\System.Web.Helpers.xml
+c:\users\lidor\source\repos\SportMatch_1\SportMatch_1\bin\System.Web.Http.xml
+c:\users\lidor\source\repos\SportMatch_1\SportMatch_1\bin\System.Web.Http.WebHost.xml
+c:\users\lidor\source\repos\SportMatch_1\SportMatch_1\bin\System.Web.Mvc.xml
+c:\users\lidor\source\repos\SportMatch_1\SportMatch_1\bin\System.Web.Optimization.xml
+c:\users\lidor\source\repos\SportMatch_1\SportMatch_1\bin\System.Web.Razor.xml
+c:\users\lidor\source\repos\SportMatch_1\SportMatch_1\bin\System.Web.WebPages.xml
+c:\users\lidor\source\repos\SportMatch_1\SportMatch_1\bin\System.Web.WebPages.Deployment.xml
+c:\users\lidor\source\repos\SportMatch_1\SportMatch_1\bin\System.Web.WebPages.Razor.xml
+c:\users\lidor\source\repos\SportMatch_1\SportMatch_1\bin\Antlr3.Runtime.pdb
+c:\users\lidor\source\repos\SportMatch_1\SportMatch_1\bin\Microsoft.ApplicationInsights.xml
+c:\users\lidor\source\repos\SportMatch_1\SportMatch_1\bin\Microsoft.AI.DependencyCollector.xml
+c:\users\lidor\source\repos\SportMatch_1\SportMatch_1\bin\Microsoft.AI.ServerTelemetryChannel.xml
+c:\users\lidor\source\repos\SportMatch_1\SportMatch_1\bin\Microsoft.AI.WindowsServer.xml
+c:\users\lidor\source\repos\SportMatch_1\SportMatch_1\bin\Microsoft.AI.Web.xml
+c:\users\lidor\source\repos\SportMatch_1\SportMatch_1\obj\Debug\SportMatch_1.csprojResolveAssemblyReference.cache
+c:\users\lidor\source\repos\SportMatch_1\SportMatch_1\obj\Debug\SportMatch_1.csproj.CoreCompileInputs.cache
+c:\users\lidor\source\repos\SportMatch_1\SportMatch_1\obj\Debug\SportMatch_1.dll
+c:\users\lidor\source\repos\SportMatch_1\SportMatch_1\obj\Debug\SportMatch_1.pdb
+C:\Users\aviya\Documents\Studies\פרויקט גמר\פיתוח\SportMatch_1\SportMatch_1\bin\ApplicationInsights.config
+C:\Users\aviya\Documents\Studies\פרויקט גמר\פיתוח\SportMatch_1\SportMatch_1\bin\SportMatch_1.dll.config
+C:\Users\aviya\Documents\Studies\פרויקט גמר\פיתוח\SportMatch_1\SportMatch_1\bin\SportMatch_1.dll
+C:\Users\aviya\Documents\Studies\פרויקט גמר\פיתוח\SportMatch_1\SportMatch_1\bin\SportMatch_1.pdb
+C:\Users\aviya\Documents\Studies\פרויקט גמר\פיתוח\SportMatch_1\SportMatch_1\bin\Antlr3.Runtime.dll
+C:\Users\aviya\Documents\Studies\פרויקט גמר\פיתוח\SportMatch_1\SportMatch_1\bin\Microsoft.AI.Agent.Intercept.dll
+C:\Users\aviya\Documents\Studies\פרויקט גמר\פיתוח\SportMatch_1\SportMatch_1\bin\Microsoft.AI.DependencyCollector.dll
+C:\Users\aviya\Documents\Studies\פרויקט גמר\פיתוח\SportMatch_1\SportMatch_1\bin\Microsoft.AI.PerfCounterCollector.dll
+C:\Users\aviya\Documents\Studies\פרויקט גמר\פיתוח\SportMatch_1\SportMatch_1\bin\Microsoft.AI.ServerTelemetryChannel.dll
+C:\Users\aviya\Documents\Studies\פרויקט גמר\פיתוח\SportMatch_1\SportMatch_1\bin\Microsoft.AI.Web.dll
+C:\Users\aviya\Documents\Studies\פרויקט גמר\פיתוח\SportMatch_1\SportMatch_1\bin\Microsoft.AI.WindowsServer.dll
+C:\Users\aviya\Documents\Studies\פרויקט גמר\פיתוח\SportMatch_1\SportMatch_1\bin\Microsoft.ApplicationInsights.dll
+C:\Users\aviya\Documents\Studies\פרויקט גמר\פיתוח\SportMatch_1\SportMatch_1\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\aviya\Documents\Studies\פרויקט גמר\פיתוח\SportMatch_1\SportMatch_1\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\aviya\Documents\Studies\פרויקט גמר\פיתוח\SportMatch_1\SportMatch_1\bin\Newtonsoft.Json.dll
+C:\Users\aviya\Documents\Studies\פרויקט גמר\פיתוח\SportMatch_1\SportMatch_1\bin\System.Net.Http.Formatting.dll
+C:\Users\aviya\Documents\Studies\פרויקט גמר\פיתוח\SportMatch_1\SportMatch_1\bin\System.Web.Helpers.dll
+C:\Users\aviya\Documents\Studies\פרויקט גמר\פיתוח\SportMatch_1\SportMatch_1\bin\System.Web.Http.dll
+C:\Users\aviya\Documents\Studies\פרויקט גמר\פיתוח\SportMatch_1\SportMatch_1\bin\System.Web.Http.WebHost.dll
+C:\Users\aviya\Documents\Studies\פרויקט גמר\פיתוח\SportMatch_1\SportMatch_1\bin\System.Web.Mvc.dll
+C:\Users\aviya\Documents\Studies\פרויקט גמר\פיתוח\SportMatch_1\SportMatch_1\bin\System.Web.Optimization.dll
+C:\Users\aviya\Documents\Studies\פרויקט גמר\פיתוח\SportMatch_1\SportMatch_1\bin\System.Web.Razor.dll
+C:\Users\aviya\Documents\Studies\פרויקט גמר\פיתוח\SportMatch_1\SportMatch_1\bin\System.Web.WebPages.Deployment.dll
+C:\Users\aviya\Documents\Studies\פרויקט גמר\פיתוח\SportMatch_1\SportMatch_1\bin\System.Web.WebPages.dll
+C:\Users\aviya\Documents\Studies\פרויקט גמר\פיתוח\SportMatch_1\SportMatch_1\bin\System.Web.WebPages.Razor.dll
+C:\Users\aviya\Documents\Studies\פרויקט גמר\פיתוח\SportMatch_1\SportMatch_1\bin\WebGrease.dll
+C:\Users\aviya\Documents\Studies\פרויקט גמר\פיתוח\SportMatch_1\SportMatch_1\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\aviya\Documents\Studies\פרויקט גמר\פיתוח\SportMatch_1\SportMatch_1\bin\Newtonsoft.Json.xml
+C:\Users\aviya\Documents\Studies\פרויקט גמר\פיתוח\SportMatch_1\SportMatch_1\bin\System.Net.Http.Formatting.xml
+C:\Users\aviya\Documents\Studies\פרויקט גמר\פיתוח\SportMatch_1\SportMatch_1\bin\System.Web.Helpers.xml
+C:\Users\aviya\Documents\Studies\פרויקט גמר\פיתוח\SportMatch_1\SportMatch_1\bin\System.Web.Http.xml
+C:\Users\aviya\Documents\Studies\פרויקט גמר\פיתוח\SportMatch_1\SportMatch_1\bin\System.Web.Http.WebHost.xml
+C:\Users\aviya\Documents\Studies\פרויקט גמר\פיתוח\SportMatch_1\SportMatch_1\bin\System.Web.Mvc.xml
+C:\Users\aviya\Documents\Studies\פרויקט גמר\פיתוח\SportMatch_1\SportMatch_1\bin\System.Web.Optimization.xml
+C:\Users\aviya\Documents\Studies\פרויקט גמר\פיתוח\SportMatch_1\SportMatch_1\bin\System.Web.Razor.xml
+C:\Users\aviya\Documents\Studies\פרויקט גמר\פיתוח\SportMatch_1\SportMatch_1\bin\System.Web.WebPages.xml
+C:\Users\aviya\Documents\Studies\פרויקט גמר\פיתוח\SportMatch_1\SportMatch_1\bin\System.Web.WebPages.Deployment.xml
+C:\Users\aviya\Documents\Studies\פרויקט גמר\פיתוח\SportMatch_1\SportMatch_1\bin\System.Web.WebPages.Razor.xml
+C:\Users\aviya\Documents\Studies\פרויקט גמר\פיתוח\SportMatch_1\SportMatch_1\bin\Antlr3.Runtime.pdb
+C:\Users\aviya\Documents\Studies\פרויקט גמר\פיתוח\SportMatch_1\SportMatch_1\bin\Microsoft.ApplicationInsights.xml
+C:\Users\aviya\Documents\Studies\פרויקט גמר\פיתוח\SportMatch_1\SportMatch_1\bin\Microsoft.AI.DependencyCollector.xml
+C:\Users\aviya\Documents\Studies\פרויקט גמר\פיתוח\SportMatch_1\SportMatch_1\bin\Microsoft.AI.ServerTelemetryChannel.xml
+C:\Users\aviya\Documents\Studies\פרויקט גמר\פיתוח\SportMatch_1\SportMatch_1\bin\Microsoft.AI.WindowsServer.xml
+C:\Users\aviya\Documents\Studies\פרויקט גמר\פיתוח\SportMatch_1\SportMatch_1\bin\Microsoft.AI.Web.xml
+C:\Users\aviya\Documents\Studies\פרויקט גמר\פיתוח\SportMatch_1\SportMatch_1\obj\Debug\SportMatch_1.csprojAssemblyReference.cache
+C:\Users\aviya\Documents\Studies\פרויקט גמר\פיתוח\SportMatch_1\SportMatch_1\obj\Debug\SportMatch_1.csproj.CoreCompileInputs.cache
+C:\Users\aviya\Documents\Studies\פרויקט גמר\פיתוח\SportMatch_1\SportMatch_1\obj\Debug\SportMatch_1.csproj.CopyComplete
+C:\Users\aviya\Documents\Studies\פרויקט גמר\פיתוח\SportMatch_1\SportMatch_1\obj\Debug\SportMatch_1.dll
+C:\Users\aviya\Documents\Studies\פרויקט גמר\פיתוח\SportMatch_1\SportMatch_1\obj\Debug\SportMatch_1.pdb
+C:\Users\Lidor\Desktop\SportMatch_1\SportMatch_1\bin\ApplicationInsights.config
+C:\Users\Lidor\Desktop\SportMatch_1\SportMatch_1\bin\SportMatch_1.dll.config
+C:\Users\Lidor\Desktop\SportMatch_1\SportMatch_1\bin\SportMatch_1.dll
+C:\Users\Lidor\Desktop\SportMatch_1\SportMatch_1\bin\SportMatch_1.pdb
+C:\Users\Lidor\Desktop\SportMatch_1\SportMatch_1\bin\Antlr3.Runtime.dll
+C:\Users\Lidor\Desktop\SportMatch_1\SportMatch_1\bin\Microsoft.AI.Agent.Intercept.dll
+C:\Users\Lidor\Desktop\SportMatch_1\SportMatch_1\bin\Microsoft.AI.DependencyCollector.dll
+C:\Users\Lidor\Desktop\SportMatch_1\SportMatch_1\bin\Microsoft.AI.PerfCounterCollector.dll
+C:\Users\Lidor\Desktop\SportMatch_1\SportMatch_1\bin\Microsoft.AI.ServerTelemetryChannel.dll
+C:\Users\Lidor\Desktop\SportMatch_1\SportMatch_1\bin\Microsoft.AI.Web.dll
+C:\Users\Lidor\Desktop\SportMatch_1\SportMatch_1\bin\Microsoft.AI.WindowsServer.dll
+C:\Users\Lidor\Desktop\SportMatch_1\SportMatch_1\bin\Microsoft.ApplicationInsights.dll
+C:\Users\Lidor\Desktop\SportMatch_1\SportMatch_1\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\Lidor\Desktop\SportMatch_1\SportMatch_1\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\Lidor\Desktop\SportMatch_1\SportMatch_1\bin\Newtonsoft.Json.dll
+C:\Users\Lidor\Desktop\SportMatch_1\SportMatch_1\bin\System.Net.Http.Formatting.dll
+C:\Users\Lidor\Desktop\SportMatch_1\SportMatch_1\bin\System.Web.Helpers.dll
+C:\Users\Lidor\Desktop\SportMatch_1\SportMatch_1\bin\System.Web.Http.dll
+C:\Users\Lidor\Desktop\SportMatch_1\SportMatch_1\bin\System.Web.Http.WebHost.dll
+C:\Users\Lidor\Desktop\SportMatch_1\SportMatch_1\bin\System.Web.Mvc.dll
+C:\Users\Lidor\Desktop\SportMatch_1\SportMatch_1\bin\System.Web.Optimization.dll
+C:\Users\Lidor\Desktop\SportMatch_1\SportMatch_1\bin\System.Web.Razor.dll
+C:\Users\Lidor\Desktop\SportMatch_1\SportMatch_1\bin\System.Web.WebPages.Deployment.dll
+C:\Users\Lidor\Desktop\SportMatch_1\SportMatch_1\bin\System.Web.WebPages.dll
+C:\Users\Lidor\Desktop\SportMatch_1\SportMatch_1\bin\System.Web.WebPages.Razor.dll
+C:\Users\Lidor\Desktop\SportMatch_1\SportMatch_1\bin\WebGrease.dll
+C:\Users\Lidor\Desktop\SportMatch_1\SportMatch_1\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\Lidor\Desktop\SportMatch_1\SportMatch_1\bin\Newtonsoft.Json.xml
+C:\Users\Lidor\Desktop\SportMatch_1\SportMatch_1\bin\System.Net.Http.Formatting.xml
+C:\Users\Lidor\Desktop\SportMatch_1\SportMatch_1\bin\System.Web.Helpers.xml
+C:\Users\Lidor\Desktop\SportMatch_1\SportMatch_1\bin\System.Web.Http.xml
+C:\Users\Lidor\Desktop\SportMatch_1\SportMatch_1\bin\System.Web.Http.WebHost.xml
+C:\Users\Lidor\Desktop\SportMatch_1\SportMatch_1\bin\System.Web.Mvc.xml
+C:\Users\Lidor\Desktop\SportMatch_1\SportMatch_1\bin\System.Web.Optimization.xml
+C:\Users\Lidor\Desktop\SportMatch_1\SportMatch_1\bin\System.Web.Razor.xml
+C:\Users\Lidor\Desktop\SportMatch_1\SportMatch_1\bin\System.Web.WebPages.xml
+C:\Users\Lidor\Desktop\SportMatch_1\SportMatch_1\bin\System.Web.WebPages.Deployment.xml
+C:\Users\Lidor\Desktop\SportMatch_1\SportMatch_1\bin\System.Web.WebPages.Razor.xml
+C:\Users\Lidor\Desktop\SportMatch_1\SportMatch_1\bin\Antlr3.Runtime.pdb
+C:\Users\Lidor\Desktop\SportMatch_1\SportMatch_1\bin\Microsoft.ApplicationInsights.xml
+C:\Users\Lidor\Desktop\SportMatch_1\SportMatch_1\bin\Microsoft.AI.DependencyCollector.xml
+C:\Users\Lidor\Desktop\SportMatch_1\SportMatch_1\bin\Microsoft.AI.ServerTelemetryChannel.xml
+C:\Users\Lidor\Desktop\SportMatch_1\SportMatch_1\bin\Microsoft.AI.WindowsServer.xml
+C:\Users\Lidor\Desktop\SportMatch_1\SportMatch_1\bin\Microsoft.AI.Web.xml
+C:\Users\Lidor\Desktop\SportMatch_1\SportMatch_1\obj\Debug\SportMatch_1.csprojResolveAssemblyReference.cache
+C:\Users\Lidor\Desktop\SportMatch_1\SportMatch_1\obj\Debug\SportMatch_1.csproj.CoreCompileInputs.cache
+C:\Users\Lidor\Desktop\SportMatch_1\SportMatch_1\obj\Debug\SportMatch_1.dll
+C:\Users\Lidor\Desktop\SportMatch_1\SportMatch_1\obj\Debug\SportMatch_1.pdb
+C:\Users\aviya\Documents\Studies\פרויקט גמר\פיתוח\SportMatch_1 (2)\SportMatch_1\SportMatch_1\bin\ApplicationInsights.config
+C:\Users\aviya\Documents\Studies\פרויקט גמר\פיתוח\SportMatch_1 (2)\SportMatch_1\SportMatch_1\bin\SportMatch_1.dll.config
+C:\Users\aviya\Documents\Studies\פרויקט גמר\פיתוח\SportMatch_1 (2)\SportMatch_1\SportMatch_1\bin\SportMatch_1.dll
+C:\Users\aviya\Documents\Studies\פרויקט גמר\פיתוח\SportMatch_1 (2)\SportMatch_1\SportMatch_1\bin\SportMatch_1.pdb
+C:\Users\aviya\Documents\Studies\פרויקט גמר\פיתוח\SportMatch_1 (2)\SportMatch_1\SportMatch_1\bin\Antlr3.Runtime.dll
+C:\Users\aviya\Documents\Studies\פרויקט גמר\פיתוח\SportMatch_1 (2)\SportMatch_1\SportMatch_1\bin\Microsoft.AI.Agent.Intercept.dll
+C:\Users\aviya\Documents\Studies\פרויקט גמר\פיתוח\SportMatch_1 (2)\SportMatch_1\SportMatch_1\bin\Microsoft.AI.DependencyCollector.dll
+C:\Users\aviya\Documents\Studies\פרויקט גמר\פיתוח\SportMatch_1 (2)\SportMatch_1\SportMatch_1\bin\Microsoft.AI.PerfCounterCollector.dll
+C:\Users\aviya\Documents\Studies\פרויקט גמר\פיתוח\SportMatch_1 (2)\SportMatch_1\SportMatch_1\bin\Microsoft.AI.ServerTelemetryChannel.dll
+C:\Users\aviya\Documents\Studies\פרויקט גמר\פיתוח\SportMatch_1 (2)\SportMatch_1\SportMatch_1\bin\Microsoft.AI.Web.dll
+C:\Users\aviya\Documents\Studies\פרויקט גמר\פיתוח\SportMatch_1 (2)\SportMatch_1\SportMatch_1\bin\Microsoft.AI.WindowsServer.dll
+C:\Users\aviya\Documents\Studies\פרויקט גמר\פיתוח\SportMatch_1 (2)\SportMatch_1\SportMatch_1\bin\Microsoft.ApplicationInsights.dll
+C:\Users\aviya\Documents\Studies\פרויקט גמר\פיתוח\SportMatch_1 (2)\SportMatch_1\SportMatch_1\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\aviya\Documents\Studies\פרויקט גמר\פיתוח\SportMatch_1 (2)\SportMatch_1\SportMatch_1\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\aviya\Documents\Studies\פרויקט גמר\פיתוח\SportMatch_1 (2)\SportMatch_1\SportMatch_1\bin\Newtonsoft.Json.dll
+C:\Users\aviya\Documents\Studies\פרויקט גמר\פיתוח\SportMatch_1 (2)\SportMatch_1\SportMatch_1\bin\System.Net.Http.Formatting.dll
+C:\Users\aviya\Documents\Studies\פרויקט גמר\פיתוח\SportMatch_1 (2)\SportMatch_1\SportMatch_1\bin\System.Web.Helpers.dll
+C:\Users\aviya\Documents\Studies\פרויקט גמר\פיתוח\SportMatch_1 (2)\SportMatch_1\SportMatch_1\bin\System.Web.Http.dll
+C:\Users\aviya\Documents\Studies\פרויקט גמר\פיתוח\SportMatch_1 (2)\SportMatch_1\SportMatch_1\bin\System.Web.Http.WebHost.dll
+C:\Users\aviya\Documents\Studies\פרויקט גמר\פיתוח\SportMatch_1 (2)\SportMatch_1\SportMatch_1\bin\System.Web.Mvc.dll
+C:\Users\aviya\Documents\Studies\פרויקט גמר\פיתוח\SportMatch_1 (2)\SportMatch_1\SportMatch_1\bin\System.Web.Optimization.dll
+C:\Users\aviya\Documents\Studies\פרויקט גמר\פיתוח\SportMatch_1 (2)\SportMatch_1\SportMatch_1\bin\System.Web.Razor.dll
+C:\Users\aviya\Documents\Studies\פרויקט גמר\פיתוח\SportMatch_1 (2)\SportMatch_1\SportMatch_1\bin\System.Web.WebPages.Deployment.dll
+C:\Users\aviya\Documents\Studies\פרויקט גמר\פיתוח\SportMatch_1 (2)\SportMatch_1\SportMatch_1\bin\System.Web.WebPages.dll
+C:\Users\aviya\Documents\Studies\פרויקט גמר\פיתוח\SportMatch_1 (2)\SportMatch_1\SportMatch_1\bin\System.Web.WebPages.Razor.dll
+C:\Users\aviya\Documents\Studies\פרויקט גמר\פיתוח\SportMatch_1 (2)\SportMatch_1\SportMatch_1\bin\WebGrease.dll
+C:\Users\aviya\Documents\Studies\פרויקט גמר\פיתוח\SportMatch_1 (2)\SportMatch_1\SportMatch_1\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\aviya\Documents\Studies\פרויקט גמר\פיתוח\SportMatch_1 (2)\SportMatch_1\SportMatch_1\bin\Newtonsoft.Json.xml
+C:\Users\aviya\Documents\Studies\פרויקט גמר\פיתוח\SportMatch_1 (2)\SportMatch_1\SportMatch_1\bin\System.Net.Http.Formatting.xml
+C:\Users\aviya\Documents\Studies\פרויקט גמר\פיתוח\SportMatch_1 (2)\SportMatch_1\SportMatch_1\bin\System.Web.Helpers.xml
+C:\Users\aviya\Documents\Studies\פרויקט גמר\פיתוח\SportMatch_1 (2)\SportMatch_1\SportMatch_1\bin\System.Web.Http.xml
+C:\Users\aviya\Documents\Studies\פרויקט גמר\פיתוח\SportMatch_1 (2)\SportMatch_1\SportMatch_1\bin\System.Web.Http.WebHost.xml
+C:\Users\aviya\Documents\Studies\פרויקט גמר\פיתוח\SportMatch_1 (2)\SportMatch_1\SportMatch_1\bin\System.Web.Mvc.xml
+C:\Users\aviya\Documents\Studies\פרויקט גמר\פיתוח\SportMatch_1 (2)\SportMatch_1\SportMatch_1\bin\System.Web.Optimization.xml
+C:\Users\aviya\Documents\Studies\פרויקט גמר\פיתוח\SportMatch_1 (2)\SportMatch_1\SportMatch_1\bin\System.Web.Razor.xml
+C:\Users\aviya\Documents\Studies\פרויקט גמר\פיתוח\SportMatch_1 (2)\SportMatch_1\SportMatch_1\bin\System.Web.WebPages.xml
+C:\Users\aviya\Documents\Studies\פרויקט גמר\פיתוח\SportMatch_1 (2)\SportMatch_1\SportMatch_1\bin\System.Web.WebPages.Deployment.xml
+C:\Users\aviya\Documents\Studies\פרויקט גמר\פיתוח\SportMatch_1 (2)\SportMatch_1\SportMatch_1\bin\System.Web.WebPages.Razor.xml
+C:\Users\aviya\Documents\Studies\פרויקט גמר\פיתוח\SportMatch_1 (2)\SportMatch_1\SportMatch_1\bin\Antlr3.Runtime.pdb
+C:\Users\aviya\Documents\Studies\פרויקט גמר\פיתוח\SportMatch_1 (2)\SportMatch_1\SportMatch_1\bin\Microsoft.ApplicationInsights.xml
+C:\Users\aviya\Documents\Studies\פרויקט גמר\פיתוח\SportMatch_1 (2)\SportMatch_1\SportMatch_1\bin\Microsoft.AI.DependencyCollector.xml
+C:\Users\aviya\Documents\Studies\פרויקט גמר\פיתוח\SportMatch_1 (2)\SportMatch_1\SportMatch_1\bin\Microsoft.AI.ServerTelemetryChannel.xml
+C:\Users\aviya\Documents\Studies\פרויקט גמר\פיתוח\SportMatch_1 (2)\SportMatch_1\SportMatch_1\bin\Microsoft.AI.WindowsServer.xml
+C:\Users\aviya\Documents\Studies\פרויקט גמר\פיתוח\SportMatch_1 (2)\SportMatch_1\SportMatch_1\bin\Microsoft.AI.Web.xml
+C:\Users\aviya\Documents\Studies\פרויקט גמר\פיתוח\SportMatch_1 (2)\SportMatch_1\SportMatch_1\obj\Debug\SportMatch_1.csprojAssemblyReference.cache
+C:\Users\aviya\Documents\Studies\פרויקט גמר\פיתוח\SportMatch_1 (2)\SportMatch_1\SportMatch_1\obj\Debug\SportMatch_1.csproj.CoreCompileInputs.cache
+C:\Users\aviya\Documents\Studies\פרויקט גמר\פיתוח\SportMatch_1 (2)\SportMatch_1\SportMatch_1\obj\Debug\SportMatch_1.csproj.CopyComplete
+C:\Users\aviya\Documents\Studies\פרויקט גמר\פיתוח\SportMatch_1 (2)\SportMatch_1\SportMatch_1\obj\Debug\SportMatch_1.dll
+C:\Users\aviya\Documents\Studies\פרויקט גמר\פיתוח\SportMatch_1 (2)\SportMatch_1\SportMatch_1\obj\Debug\SportMatch_1.pdb

@@ -1,0 +1,112 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="../Scripts/ajaxCalls.js"></script>
+    <script>
+        $(document).ready(function () {
+            ajaxCall("GET", "../api/Area", "", successGetAreas, errorGetAreas);
+            ajaxCall("GET", "../api/Company", "", successGetCompany, errorGetCompany);
+            $("#pForm").submit(f1);
+            $("#btn").click(SignInBranch);
+
+        });
+        function f1() {
+            return false;
+        }
+
+        function successGetAreas(data) {
+            console.log("im in success");
+            let arrNames = "<option value =''>Choose Area</option>";
+            for (k in data) {
+                arrNames += `<option value = ${data[k].AreaCode}>${data[k].AreaName} </option>`;
+            }
+            $('#areacode').append(arrNames);
+        }
+
+        function errorGetAreas(err) {
+            console.log(err);
+        }
+
+        function successGetCompany(data) {
+            console.log("im in success");
+            let arrNames = "<option value =''>Choose Company</option>";
+            for (k in data) {
+                arrNames += `<option value = ${data[k].CompanyNo}>${data[k].Name} </option>`;
+            }
+            $('#companyno').append(arrNames);
+        }
+
+        function errorGetCompany(err) {
+            console.log(err);
+        }
+
+        function SignInBranch() {
+            var name = document.getElementById("bname").value;
+            var address = document.getElementById("baddress").value;
+            var city = document.getElementById("bcity").value;
+            var phoneNo = document.getElementById("bphone").value;
+            var email = document.getElementById("bmail").value;
+            var website = document.getElementById("bwebsite").value;
+            var description = document.getElementById("bdescription").value;
+            var companyNo = document.getElementById("companyno").value;
+            var password = document.getElementById("bpassword").value;
+            var areaCode = document.getElementById("areacode").value;
+            branch = {
+                Name: name,
+                Address: address,
+                City: city,
+                PhoneNo: phoneNo,
+                Email: email,
+                Website: website,
+                Description: description,
+                CompanyNo: companyNo,
+                Password: password,
+                AreaCode: areaCode
+            }
+            console.log(branch);
+            ajaxCall("POST", "../api/Branch", JSON.stringify(branch), successSignInBranch, errorSignInBranch);
+        }
+
+
+        function successSignInBranch(data) {
+            alert("success");
+
+        }
+
+        function errorSignInBranch(err) {
+            alert("error");
+            console.log(err);
+        }
+    </script>
+</head>
+<body>
+    <form id="pForm" action="/action_page.php">
+        <label for="fname">Branch name:</label><br>
+        <input type="text" id="bname" name="bname"><br>
+        <label for="lname">Branch address:</label><br>
+        <input type="text" id="baddress" name="baddress"><br>
+        <label for="fname">Branch city:</label><br>
+        <input type="text" id="bcity" name="bcity"><br>
+        <label for="lname">Phone number:</label><br>
+        <input type="text" id="bphone" name="bphone"><br>
+        <label for="fname">Email:</label><br>
+        <input type="text" id="bmail" name="bmail"><br>
+        <label for="lname">Website:</label><br>
+        <input type="text" id="bwebsite" name="bwebsite"><br>
+        <label for="fname">Branch description:</label><br>
+        <input type="text" id="bdescription" name="bdescription"><br>
+        <label for="lname">Company:</label><br>
+        <select id="companyno"></select><br>
+        <label for="fname">Branch password:</label><br>
+        <input type="text" id="bpassword" name="bpassword"><br>
+        <label for="lname">Area:</label><br>
+        <select id="areacode"></select><br>
+        <br>
+        <input id="btn" type="submit" value="Submit">
+    </form>
+</body>
+</html>

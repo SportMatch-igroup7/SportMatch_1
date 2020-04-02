@@ -1,0 +1,98 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.3.1.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
+    <script type="text/javascript" src="https://cdn.datatables.net/responsive/2.2.3/js/dataTables.responsive.min.js"></script>
+    <script type="text/javascript" src="https://cdn.datatables.net/1.10.19/js/dataTables.bootstrap.min.js"></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
+    <script src="../Scripts/ajaxCalls.js"></script>
+    <script>
+        $(document).ready(function () {
+            document.getElementById("show").style.visibility = 'hidden';
+            $("#parameterForm").submit(f1);
+            $("#btn").click(InsertParameter);
+            $("#showParameter").click(f2);
+        });
+
+        function f1() {
+            return false;
+        }
+        function f2() {
+            ShowParameter();
+            return false;
+        }
+        function ShowParameter() {
+            ajaxCall("GET", "../api/Parameter/GetParameter/", "", successGetParameter, errorGetParameter);
+        }
+        function InsertParameter() {
+            var name = document.getElementById("name").value;
+            parameter = {
+                Pname: name
+            }
+            console.log(JSON.stringify(parameter));
+            ajaxCall("POST", "../api/Parameter", JSON.stringify(parameter), successInsertParameter, errorInsertParameter);
+        }
+        function successInsertParameter(data) {
+            console.log(data);
+            swal("Good job!", "success", "success")
+        }
+        function errorInsertParameter(err) {
+            console.log(err);
+        }
+        function successGetParameter(data) {
+            console.log(data);
+            document.getElementById("show").style.visibility = 'visible';
+            Continents = data; // keep the Favs array in a global variable;
+            console.log(data);
+            try {
+                tbl = $('#Parameter_Table').DataTable({
+                    data: data,
+                    pageLength: 5,
+                    columns: [
+                        { data: "ParameterCode" },
+                        { data: "ParameterName" }
+                    ],
+                });
+
+            }
+            catch (err) {
+                alert(err);
+            }
+        }
+        function errorGetParameter(err) {
+            console.log("error " + err);
+        }
+
+    </script>
+</head>
+<body>
+    <form id="parameterForm">
+        <label for="Pname">Parameter name:</label><br>
+        <input type="text" id="name"><br>
+        <input id="btn" type="submit" value="Add">
+        <input id="showParameter" type="button" value="Show Parameters">
+    </form>
+
+    <div id="show">
+        <form id="Form">
+            <table id="Parameter_Table" style="width:100%">
+                <thead>
+                    <tr>
+                        <th>קוד פרמטר</th>
+                        <th>שם פרמטר</th>
+
+                    </tr>
+                </thead>
+            </table>
+        </form>
+    </div>
+
+</body>
+</html>

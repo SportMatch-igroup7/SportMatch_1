@@ -1,0 +1,127 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="../Scripts/ajaxCalls.js"></script>
+    <script>
+        $(document).ready(function () {
+            $("#pForm").submit(f1);
+            $("#btn").click(checkDetails);
+            $("#signbr").click(signInBrnach);
+            $("#signtr").click(signInTrainer);
+
+        });
+        function f1() {
+            return false;
+        }
+
+        var email = '';
+        var password = '';
+        function checkDetails() {
+            email = document.getElementById("email").value;
+            password = document.getElementById("pass").value;
+
+            var m = validateEmail(email);
+            var p = validatePassword(password);
+
+            if(m==true && p==true)
+                ajaxCall("Get", "../api/User/getUser", "email=" + email, successGetUser, errorGetUser);
+        }
+
+        function validateEmail(e)
+        {
+            var mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+            if (e.match(mailformat)) {
+                //document.pForm.email.focus();
+                return true;
+            }
+            else {
+                alert("You have entered an invalid email address!");
+                //document.pForm.email.focus();
+                return false;
+            }
+        }
+
+        function validatePassword(p)
+        {
+            console.log(p.length)
+            if (p.length>=6) {
+                //document.pForm.password.focus();
+                return true;
+            }
+            else {
+                alert("You have entered an invalid password!");
+               // document.pForm.password.focus();
+                return false;
+            }
+        }
+
+
+        function successGetUser(data) { //נצטרך לעשות בדיקה שכל מייל נמצא רק פעם אחת במערכת
+            alert("success");
+            if (data.length < 1)
+                alert("Email doesnt exists on the system")
+            else
+                checkPassword(data)
+        }
+
+        function errorGetUser(err) {
+            alert("error");
+            console.log(err);
+        }
+
+        function checkPassword(data) {
+            if (password == data[0].Password)
+                checkType(data);
+            else
+                alert("Invalid password, please try again")
+        }
+
+        function checkType(data) {
+            userDetail = {
+                Code: data[0].Code,
+                Email: data[0].Email,
+                Type: data[0].Type
+            }
+            localStorage["userDetails"] = JSON.stringify(userDetail);
+            if (data[0].Type == 'Branch')
+            {
+                //להעביר לדשבורד מועדון. בשלב זה גם צריכות להשתמש בלוקאל סטורז
+                alert('Branch'); //סתם כדי שזה לא יעשה שגיאה בינתיים
+                window.location.href = 'RequestForReplacement.html';
+            }
+                
+            else
+                //להעביר לדשבורד מאמן. בשלב זה גם צריכות להשתמש בלוקאל סטורז
+                alert('Trainer'); //סתם כדי שזה לא יעשה שגיאה בינתיים
+        }
+
+      
+
+        function signInBrnach() {
+            window.location.href = 'BranchSignIn.html';
+            
+        }
+
+        function signInTrainer() {
+            window.location.href = 'TrainerSignIn.html';
+        }
+    </script>
+</head>
+<body>
+    <form id="pForm" action="/action_page.php">
+        <label for="fname">שם משתמש:</label><br>
+        <input type="text" id="email" name="email"><br>
+        <label for="lname">סיסמה:</label><br>
+        <input type="password" id="pass" name="pass"><br>
+        <br>
+        <input id="btn" type="submit" value="התחבר">
+        <h5>לא רשום עדיין?</h5>
+        <input id="signbr" type="button" value="הירשם כמועדון" />
+        <input id="signtr" type="button" value="הירשם כמאמן" />
+    </form>
+</body>
+</html>

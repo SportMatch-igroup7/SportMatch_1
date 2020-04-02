@@ -1,0 +1,60 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.3.1.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <script src="../Scripts/ajaxCalls.js"></script>
+    <script>
+        $(document).ready(function () {
+            ajaxCall("GET", "../api/Parameter","", successGetParameters, errorGetParameters);
+        });
+
+        function successGetParameters(data) {
+            console.log(data);
+            console.log("im in success");
+            //let arrNames = "<option value =''>Choose Company</option>";
+            //for (k in data) {
+            //    arrNames += `<option value = ${data[k].CompanyNo}>${data[k].Name} </option>`;
+            //}
+            //$('#companyno').append(arrNames);
+        }
+        function errorGetParameters(err) {
+            console.log(err);
+        }
+        function f1() {
+            return false;
+        }
+        function f2() {
+
+            return false;
+        }
+    </script>
+</head>
+<body>
+    <div class="container">
+        <h2>משקלי קריטריונים</h2>
+        <form action="/action_page.php">
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" class="form-control" id="email" placeholder="Enter email" name="email">
+            </div>
+            <div class="form-group">
+                <label for="pwd">Password:</label>
+                <input type="password" class="form-control" id="pwd" placeholder="Enter password" name="pwd">
+            </div>
+            <div class="checkbox">
+                <label><input type="checkbox" name="remember"> Remember me</label>
+            </div>
+            <button type="submit" class="btn btn-default">Submit</button>
+        </form>
+    </div>
+</body>
+</html>

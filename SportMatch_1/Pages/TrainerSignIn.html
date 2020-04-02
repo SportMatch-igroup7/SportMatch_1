@@ -1,0 +1,87 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="../Scripts/ajaxCalls.js"></script>
+    <script>
+        $(document).ready(function () {
+            $("#pForm").submit(f1);
+            $("#btn").click(SignInTrainer);
+        });
+        function f1() {
+            return false;
+        }
+
+
+        function SignInTrainer() {
+            var name = document.getElementById("tname").value;
+            var lname = document.getElementById("lname").value;
+            //var bdate = new Date ($('#bdate').val());
+            var email = document.getElementById("temail").value;
+            var phoneNo1 = document.getElementById("phone1").value;
+            var phoneNo2 = document.getElementById("phone2").value;
+            var gender = document.getElementById("gender").value;
+            var password = document.getElementById("tpassword").value;
+            var aboutMe = document.getElementById("aboutme").value;
+            var pricePerHour = document.getElementById("tprice").value;
+            trainer = {
+                FirstName: name,
+                LastName: lname,
+                Email: email,
+                Phone1: phoneNo1,
+                Phone2: phoneNo2,
+                Gender: gender,
+                Password: password,
+                AboutMe: aboutMe,
+                PricePerHour: pricePerHour
+            }
+            console.log(trainer);
+            ajaxCall("POST", "../api/Trainer", JSON.stringify(trainer), successSignInTrainer, errorSignInTrainer);
+        }
+
+
+        function successSignInTrainer(data) {
+            alert("success");
+
+        }
+
+        function errorSignInTrainer(err) {
+            alert("error");
+            console.log(err);
+        }
+    </script>
+</head>
+<body>
+    <form id="pForm" action="/action_page.php">
+        <label for="fname">Name:</label><br>
+        <input type="text" id="tname" name="tname"><br>
+        <label for="lname">Last Name:</label><br>
+        <input type="text" id="lname" name="lname"><br>
+        <label for="fname">Date of Birth:</label><br>
+        <input type="date" id="bdate" name="bdate"><br>
+        <label for="fname">Email:</label><br>
+        <input type="text" id="temail" name="temail"><br>
+        <label for="fname">Phone1:</label><br>
+        <input type="text" id="phone1" name="phone1"><br>
+        <label for="lname">Phone2:</label><br>
+        <input type="text" id="phone2" name="phone2"><br>
+        <label for="lname">Gender:</label><br>
+        <input type="text" id="gender" name="gender"><br>
+        <label for="fname">Password:</label><br>
+        <input type="text" id="tpassword" name="tpassword"><br>
+        <label for="fname">About Me:</label><br>
+        <input type="text" id="aboutme" name="aboutme"><br>
+        <!--<label for="lname">Qualifications:</label><br>
+        <select id="companyno"></select><br>-->
+        <label for="fname">Price Per Hour:</label><br>
+        <input type="text" id="tprice" name="tprice"><br>
+        <!--missing image-->
+
+
+        <input id="btn" type="submit" value="Submit" >
+    </form>
+</body>
+</html>
