@@ -177,6 +177,7 @@
     <Compile Include="Areas\HelpPage\SampleGeneration\SampleDirection.cs" />
     <Compile Include="Areas\HelpPage\SampleGeneration\TextSample.cs" />
     <Compile Include="Areas\HelpPage\XmlDocumentationProvider.cs" />
+    <Compile Include="Controllers\LinkController.cs" />
     <Compile Include="Controllers\DifficultyLevelController.cs" />
     <Compile Include="Controllers\LanguageController .cs" />
     <Compile Include="Controllers\ParameterController.cs" />
@@ -192,6 +193,7 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\Link.cs" />
     <Compile Include="Models\Parameter.cs" />
     <Compile Include="Models\Population.cs" />
     <Compile Include="Models\DifficultyLevel.cs" />

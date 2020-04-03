@@ -279,6 +279,49 @@ public class DBservices
         }
         return areasList;
     }
+
+    public List<Link> getLinks()
+    {
+        List<Link> linksList = new List<Link>();
+        SqlConnection con = null;
+
+        try
+        {
+            con = connect("DB7"); // create a connection to the database using the connection String defined in the web config file
+
+            String selectSTR = "SELECT * FROM SM_Links";
+            SqlCommand cmd = new SqlCommand(selectSTR, con);
+
+            // get a reader
+            SqlDataReader dr = cmd.ExecuteReader(CommandBehavior.CloseConnection); // CommandBehavior.CloseConnection: the connection will be closed after reading has reached the end
+
+            while (dr.Read())
+            {   // Read till the end of the data into a row
+                Link l = new Link();
+
+                l.LinkCode = Convert.ToInt32(dr["LinkCode"]);
+                l.LinkName = (string)dr["LinkName"];
+
+                linksList.Add(l);
+            }
+
+        }
+        catch (Exception ex)
+        {
+            // write to log
+            throw (ex);
+        }
+        finally
+        {
+            if (con != null)
+            {
+                con.Close();
+            }
+
+        }
+        return linksList;
+    }
+
     public List<Company> getCompany()
     {
         List<Company> companyList = new List<Company>();
