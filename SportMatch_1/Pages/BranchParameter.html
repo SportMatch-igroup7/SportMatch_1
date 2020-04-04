@@ -14,47 +14,98 @@
     <script src="../Scripts/ajaxCalls.js"></script>
     <script>
         $(document).ready(function () {
-            ajaxCall("GET", "../api/Parameter","", successGetParameters, errorGetParameters);
+            ajaxCall("GET", "../api/Parameter", "", successGetParameters, errorGetParameters);
+            $("#PForm").submit(f1);
+            //   $("#sbtn").click(SaveParameter);
         });
-
+        var userDetails = JSON.parse(localStorage["userDetails"]);
+        var branchCode = String(userDetails.Code);
+        var numParameters;
+        var parametersWeigt = []; //arr to save the parameter of the user
+        var parametersCode = []; //arr for the id's of the input forms
         function successGetParameters(data) {
+            numParameters = 0;
             console.log(data);
             console.log("im in success");
-            //let arrNames = "<option value =''>Choose Company</option>";
-            //for (k in data) {
-            //    arrNames += `<option value = ${data[k].CompanyNo}>${data[k].Name} </option>`;
-            //}
-            //$('#companyno').append(arrNames);
+            console.log(data[0].Pname);
+            console.log("branchCode: " + branchCode);
+            let arrForm = "";
+            let placeholder = "";
+            for (k in data) {
+                placeholder = ` הכנס משקל ${data[k].Pname}`;
+                arrForm += `<div class="form-group" align="right">
+                                <label for="${data[k].Pcode}">${data[k].Pname}</label>
+                                <input type="number" class="form-control" id="${data[k].Pcode}" placeholder="${placeholder}" style="direction: rtl;" required min="0" max="100">
+                            </div>`;
+
+                numParameters += 1;
+                parametersCode[numParameters] = data[k].Pcode;
+                console.log("input id: " + data[k].Pcode);
+            }
+
+            arrForm += `<div class=" center-block text-center"><button type="submit" id="sbtn" class="btn btn-default" align="center">שמור</button></div>`;
+            $('#PForm').append(arrForm);
         }
         function errorGetParameters(err) {
             console.log(err);
         }
         function f1() {
+            SaveParameter();
             return false;
         }
-        function f2() {
+        function SaveParameter() {
+            console.log("numParameters: " + numParameters);
+            console.log("in save");
+            for (var i = 1; i <= numParameters; i++) {
+                //insert the user value to arr
+                parametersWeigt[i] = document.getElementById(parametersCode[i]).value;
+                console.log(parametersWeigt[i]);
+            }
+            if (checkValid() == 1) {
+                for (var j = 1; j <= numParameters; j++) {
+                    branchParameter = {
+                        BranchCode: branchCode,
+                        ParameterCode: parametersCode[j],
+                        ParameterWeight: parametersWeigt[j]
+                    }
+                    console.log(JSON.stringify(branchParameter));
+                    ajaxCall("POST", "../api/BranchParameter", JSON.stringify(branchParameter), successInsertBranchParameter, errorInsertBranchParameter);
+
+                }
+
+                console.log("good!");
+            }
 
             return false;
+        }
+        function successInsertBranchParameter(data) {
+            console.log(data);
+            swal("Good job!", "success", "success");
+        }
+
+        function errorInsertBranchParameter(err) {
+            console.log(err);
+        }
+
+        function checkValid() {
+            var sum = 0;
+            for (var i = 1; i <= numParameters; i++) {
+                sum += Number(parametersWeigt[i]);
+            }
+            console.log(sum);
+            if (sum != 100) {
+                alert("כל הערכים צריכים להשלים ל100");
+                return false;
+            }
+            return true;
         }
     </script>
 </head>
 <body>
     <div class="container">
-        <h2>משקלי קריטריונים</h2>
-        <form action="/action_page.php">
-            <div class="form-group">
-                <label for="email">Email:</label>
-                <input type="email" class="form-control" id="email" placeholder="Enter email" name="email">
-            </div>
-            <div class="form-group">
-                <label for="pwd">Password:</label>
-                <input type="password" class="form-control" id="pwd" placeholder="Enter password" name="pwd">
-            </div>
-            <div class="checkbox">
-                <label><input type="checkbox" name="remember"> Remember me</label>
-            </div>
-            <button type="submit" class="btn btn-default">Submit</button>
-        </form>
+        <h2 align="center">משקלי קריטריונים</h2>
+        <p align="center">הכנס משקל כל קריטריון כך שסך כל הקריטריונים ישלימו ל100</p>
+        <form action="/action_page.php" id="PForm"></form>
     </div>
 </body>
 </html>

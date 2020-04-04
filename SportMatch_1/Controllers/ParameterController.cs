@@ -21,7 +21,7 @@ namespace SportMatch_1.Controllers
         [Route("api/Parameter/GetParameter/")]
         public DataTable GetParameter()
         {
-           Parameter p = new Parameter();
+            Parameter p = new Parameter();
             return p.GetParameter();
         }
 
@@ -31,7 +31,7 @@ namespace SportMatch_1.Controllers
             return "value";
         }
 
-      
+
 
         // POST: api/Parameter
         public int Post([FromBody]Parameter p)

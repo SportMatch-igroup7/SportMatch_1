@@ -27,13 +27,12 @@
             var m = validateEmail(email);
             var p = validatePassword(password);
 
-            if(m==true && p==true)
+            if (m == true && p == true)
                 ajaxCall("Get", "../api/User/getUser", "email=" + email, successGetUser, errorGetUser);
         }
 
-        function validateEmail(e)
-        {
-            var mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+        function validateEmail(e) {
+            var mailformat = /^\w+([\.-]?\w+)@\w+([\.-]?\w+)(\.\w{2,3})+$/;
             if (e.match(mailformat)) {
                 //document.pForm.email.focus();
                 return true;
@@ -45,23 +44,22 @@
             }
         }
 
-        function validatePassword(p)
-        {
+        function validatePassword(p) {
             console.log(p.length)
-            if (p.length>=6) {
+            if (p.length >= 6) {
                 //document.pForm.password.focus();
                 return true;
             }
             else {
                 alert("You have entered an invalid password!");
-               // document.pForm.password.focus();
+                // document.pForm.password.focus();
                 return false;
             }
         }
 
 
         function successGetUser(data) { //נצטרך לעשות בדיקה שכל מייל נמצא רק פעם אחת במערכת
-            alert("success");
+            console.log("success");
             if (data.length < 1)
                 alert("Email doesnt exists on the system")
             else
@@ -69,7 +67,7 @@
         }
 
         function errorGetUser(err) {
-            alert("error");
+            console.log("error");
             console.log(err);
         }
 
@@ -87,23 +85,22 @@
                 Type: data[0].Type
             }
             localStorage["userDetails"] = JSON.stringify(userDetail);
-            if (data[0].Type == 'Branch')
-            {
+            if (data[0].Type == 'Branch') {
                 //להעביר לדשבורד מועדון. בשלב זה גם צריכות להשתמש בלוקאל סטורז
-                alert('Branch'); //סתם כדי שזה לא יעשה שגיאה בינתיים
-                window.location.href = 'RequestForReplacement.html';
+                console.log('Branch'); //סתם כדי שזה לא יעשה שגיאה בינתיים
+                window.location.href = 'BranchIndex.html';
             }
-                
+
             else
                 //להעביר לדשבורד מאמן. בשלב זה גם צריכות להשתמש בלוקאל סטורז
-                alert('Trainer'); //סתם כדי שזה לא יעשה שגיאה בינתיים
+                console.log('Trainer'); //סתם כדי שזה לא יעשה שגיאה בינתיים
         }
 
-      
+
 
         function signInBrnach() {
             window.location.href = 'BranchSignIn.html';
-            
+
         }
 
         function signInTrainer() {

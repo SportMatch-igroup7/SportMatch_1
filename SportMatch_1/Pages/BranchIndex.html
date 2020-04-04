@@ -1,0 +1,39 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.3.1.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <script src="../Scripts/ajaxCalls.js"></script>
+    <script>
+        //localStorage["userDetails"] = JSON.stringify(userDetail);
+        function ToCreate() {
+            console.log(" in ToCreate");
+            window.location.href = 'RequestForReplacement.html';
+        }
+        function ToParameter() {
+            console.log(" in ToParameter");
+            window.location.href = 'BranchParameter.html';
+
+        }
+
+    </script>
+</head>
+<body>
+    <div class="container">
+        <form action="/action_page.php" id="PForm">
+            <h2 align="center">מסך ראשי - מנהל מכון כושר</h2>
+            <button id="createRequest" onclick="ToCreate()" type="button" class="btn btn-primary btn-lg">יצירת הודעת החלפה</button>
+            <button id="parameters" onclick="ToParameter()" type="button" class="btn btn-primary btn-lg">משקלי קריטריונים</button>
+
+        </form>
+    </div>
+</body>
+</html>

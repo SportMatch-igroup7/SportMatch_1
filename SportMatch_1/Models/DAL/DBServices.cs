@@ -41,9 +41,39 @@ public class DBservices
     }
 
     //--------------------------------------------------------------------------------------------------
-    // This method inserts a car to the cars table 
+    // Insert Functions
     //--------------------------------------------------------------------------------------------------
-    public int insertBranch(Branch branch)
+    private int findBranchCode(Branch b)
+    {
+        SqlConnection con = null;
+        int branchCode = 0;
+        try
+        {
+            con = connect("DB7");
+            String selectSTR = "select BranchCode from SM_Branch where Email='"+b.Email+"'";
+            SqlCommand cmd = new SqlCommand(selectSTR, con);
+            SqlDataReader dr = cmd.ExecuteReader(CommandBehavior.CloseConnection);
+            while (dr.Read())
+            {
+                branchCode = Convert.ToInt32(dr["BranchCode"]);
+            }
+        }
+        catch (Exception ex)
+        {
+            // write to log
+            throw (ex);
+        }
+        finally
+        {
+            if (con != null)
+            {
+                con.Close();
+            }
+
+        }
+        return branchCode;
+    }
+    public Branch insertBranch(Branch b)
     {
         int numEffected = 0;
         SqlConnection con;
@@ -59,22 +89,23 @@ public class DBservices
             throw (ex);
         }
 
-        String cStr = BuildInsertCommand(branch);      // helper method to build the insert string
+        String cStr = BuildInsertCommand(b);      // helper method to build the insert string
+       // SqlCommand scalarStr = new SqlCommand("select * from SM_Branch where Email = '" + branch.Email + "'");
 
         cmd = CreateCommand(cStr, con);             // create the command
 
         try
         {
             numEffected = cmd.ExecuteNonQuery(); // execute the command
-            
+            //numEffected = Convert.ToInt32(scalarStr.ExecuteScalar());
+
         }
         catch (Exception ex)
         {
-            return 0;
+            return null;
             // write to log
             throw (ex);
         }
-
         finally
         {
             if (con != null)
@@ -83,7 +114,9 @@ public class DBservices
                 con.Close();
             }
         }
-        return numEffected;
+        b.BranchCode = findBranchCode(b);
+
+        return b;
     }
 
     //--------------------------------------------------------------------
@@ -95,8 +128,8 @@ public class DBservices
 
         StringBuilder sb = new StringBuilder();
         // use a string builder to create the dynamic string
-        sb.AppendFormat("Values('{0}', '{1}' ,'{2}', '{3}' ,'{4}', '{5}' ,'{6}', {7} ,'{8}', '{9}')", branch.Name, branch.Address, branch.City, branch.PhoneNo, branch.Email, branch.Website, branch.Description, branch.CompanyNo.ToString(), branch.Password, branch.AreaCode.ToString());
-        String prefix = "INSERT INTO SM_Branch" + "(BranchName , BranchAddress , City , PhoneNo , Email ,Website ,BranchDescription,CompanyNo , BranchPassword ,AreaCode ) ";
+        sb.AppendFormat("Values('{0}', '{1}' ,'{2}', '{3}' ,'{4}', '{5}' ,'{6}', '{7}')", branch.Name, branch.Address, branch.PhoneNo, branch.Email, branch.Description, branch.CompanyNo.ToString(), branch.Password, branch.AreaCode.ToString());
+        String prefix = "INSERT INTO SM_Branch" + "(BranchName , BranchAddress  , PhoneNo , Email ,BranchDescription,CompanyNo , BranchPassword ,AreaCode ) ";
         command = prefix + sb.ToString();
 
         return command;
@@ -124,8 +157,8 @@ public class DBservices
 
         try
         {
-             numEffected = cmd.ExecuteNonQuery(); // execute the command
-           
+            numEffected = cmd.ExecuteNonQuery(); // execute the command
+
         }
         catch (Exception ex)
         {
@@ -156,6 +189,23 @@ public class DBservices
         // use a string builder to create the dynamic string
         sb.AppendFormat("Values('{0}', '{1}' ,'{2}', '{3}' ,'{4}', '{5}' ,'{6}', '{7}' ,'{8}')", t.FirstName, t.LastName, t.Email, t.Phone1, t.Phone2, t.Gender, t.Password, t.AboutMe, t.PricePerHour.ToString());
         String prefix = "INSERT INTO SM_Trainer" + "(FirstName , LastName , Email , PhoneNo1 ,PhoneNo2 ,Gender ,TrainerPassword , AboutMe ,MinPricePerHour  ) ";
+        command = prefix + sb.ToString();
+
+        return command;
+    }
+
+
+    //--------------------------------------------------------------------
+    // Build the Insert command String
+    //--------------------------------------------------------------------
+    private String BuildInsertCommandRequest(RequestForReplacement r)
+    {
+        String command;
+
+        StringBuilder sb = new StringBuilder();
+        // use a string builder to create the dynamic string
+        sb.AppendFormat("Values('{0}', '{1}' ,'{2}', '{3}' ,'{4}', '{5}' ,'{6}', '{7}' ,'{8}', '{9}' ,'{10}', '{11}' ,'{12}')", r.PublishDateTime, r.ContactName, r.BranchCode, r.ClassTypeCode, r.FromHour, r.ToHour, r.ReplacementDate, r.ClassDescription, r.Comments, r.DifficultyLevelCode, r.MaxPrice, r.LanguageCode, r.PopulationCode);
+        String prefix = "INSERT INTO SM_RequestForReplacment" + "(PublishDateTime , ContactName , BranchCode , ClassTypeCode ,FromHour ,ToHour ,ReplacmentDate , ClassDecription ,Comments ,DifficultyLevelCode ,MaxPrice ,LanguageLCode ,PopulationCode  ) ";
         command = prefix + sb.ToString();
 
         return command;
@@ -204,21 +254,168 @@ public class DBservices
         return numEffected;
     }
 
-    //--------------------------------------------------------------------
-    // Build the Insert command String
-    //--------------------------------------------------------------------
-    private String BuildInsertCommandRequest(RequestForReplacement r)
+    private String BuildInsertCommandParameter(Parameter p)
     {
         String command;
 
         StringBuilder sb = new StringBuilder();
         // use a string builder to create the dynamic string
-        sb.AppendFormat("Values('{0}', '{1}' ,'{2}', '{3}' ,'{4}', '{5}' ,'{6}', '{7}' ,'{8}', '{9}' ,'{10}', '{11}' ,'{12}')", r.PublishDateTime, r.ContactName, r.BranchCode, r.ClassTypeCode, r.FromHour, r.ToHour, r.ReplacementDate, r.ClassDescription, r.Comments, r.DifficultyLevelCode, r.MaxPrice, r.LanguageCode, r.PopulationCode );
-        String prefix = "INSERT INTO SM_RequestForReplacment" + "(PublishDateTime , ContactName , BranchCode , ClassTypeCode ,FromHour ,ToHour ,ReplacmentDate , ClassDecription ,Comments ,DifficultyLevelCode ,MaxPrice ,LanguageLCode ,PopulationCode  ) ";
+        sb.AppendFormat("Values('{0}')", p.Pname);
+        String prefix = "INSERT INTO SM_Parameters" + "(ParameterName) ";
         command = prefix + sb.ToString();
 
         return command;
     }
+
+    public int InsertParameter(Parameter parameter)
+    {
+        SqlConnection con;
+        SqlCommand cmd;
+
+        try
+        {
+            con = connect("DB7"); // create the connection
+        }
+        catch (Exception ex)
+        {
+            // write to log
+            throw (ex);
+        }
+
+        String cStr = BuildInsertCommandParameter(parameter);      // helper method to build the insert string
+
+        cmd = CreateCommand(cStr, con);             // create the command
+
+        try
+        {
+            int numEffected = cmd.ExecuteNonQuery(); // execute the command
+            return numEffected;
+        }
+        catch (Exception ex)
+        {
+            throw (ex);
+        }
+
+        finally
+        {
+            if (con != null)
+            {
+                // close the db connection
+                con.Close();
+            }
+        }
+    }
+
+
+    private String BuildInsertCommandBranchParameter(BranchParameter bp)
+    {
+        String command;
+
+        StringBuilder sb = new StringBuilder();
+        // use a string builder to create the dynamic string
+        sb.AppendFormat("Values('{0}' , '{1}' , '{2}')", bp.BranchCode.ToString(), bp.ParameterCode.ToString(), bp.ParameterWeight.ToString());
+        String prefix = "INSERT INTO SM_ParametersBrnach" + "(BranchCode , ParameterCode , ParameterWeight) ";
+        command = prefix + sb.ToString();
+
+        return command;
+    }
+
+    public int InsertBranchParameter(BranchParameter Bparameter)
+    {
+        SqlConnection con;
+        SqlCommand cmd;
+
+        try
+        {
+            con = connect("DB7"); // create the connection
+        }
+        catch (Exception ex)
+        {
+            // write to log
+            throw (ex);
+        }
+
+        String cStr = BuildInsertCommandBranchParameter(Bparameter);      // helper method to build the insert string
+
+        cmd = CreateCommand(cStr, con);             // create the command
+
+        try
+        {
+            int numEffected = cmd.ExecuteNonQuery(); // execute the command
+            return numEffected;
+        }
+        catch (Exception ex)
+        {
+            throw (ex);
+        }
+
+        finally
+        {
+            if (con != null)
+            {
+                // close the db connection
+                con.Close();
+            }
+        }
+    }
+
+
+    private String BuildInsertCommandLinksTo(LinksTo lt)
+    {
+        String command;
+
+        StringBuilder sb = new StringBuilder();
+        // use a string builder to create the dynamic string
+        sb.AppendFormat("Values('{0}' , '{1}' , '{2}')", lt.BranchCode.ToString(), lt.LinkName, lt.LinkCode.ToString());
+        String prefix = "INSERT INTO SM_LinksTo" + "(BranchCode , Link , LinkCode) ";
+        command = prefix + sb.ToString();
+
+        return command;
+    }
+
+    public int InsertLinksTo(LinksTo lt)
+    {
+        int numEffected = 0;
+        SqlConnection con;
+        SqlCommand cmd;
+
+        try
+        {
+            con = connect("DB7"); // create the connection
+        }
+        catch (Exception ex)
+        {
+            // write to log
+            throw (ex);
+        }
+
+        String cStr = BuildInsertCommandLinksTo(lt);      // helper method to build the insert string
+
+        cmd = CreateCommand(cStr, con);             // create the command
+
+        try
+        {
+            numEffected = cmd.ExecuteNonQuery(); // execute the command
+
+        }
+        catch (Exception ex)
+        {
+            //return 0;
+            // write to log
+            throw (ex);
+        }
+
+        finally
+        {
+            if (con != null)
+            {
+                // close the db connection
+                con.Close();
+            }
+        }
+        return numEffected;
+    }
+
     //---------------------------------------------------------------------------------
     // Create the SqlCommand
     //---------------------------------------------------------------------------------
@@ -647,57 +844,7 @@ public class DBservices
         }
         return ParametersList;
     }
-    private String BuildInsertCommandParameter(Parameter p)
-    {
-        String command;
 
-        StringBuilder sb = new StringBuilder();
-        // use a string builder to create the dynamic string
-        sb.AppendFormat("Values('{0}')", p.Pname);
-        String prefix = "INSERT INTO SM_Parameters" + "(ParameterName) ";
-        command = prefix + sb.ToString();
-
-        return command;
-    }
-
-    public int InsertParameter(Parameter parameter)
-    {
-        SqlConnection con;
-        SqlCommand cmd;
-
-        try
-        {
-            con = connect("DB7"); // create the connection
-        }
-        catch (Exception ex)
-        {
-            // write to log
-            throw (ex);
-        }
-
-        String cStr = BuildInsertCommandParameter(parameter);      // helper method to build the insert string
-
-        cmd = CreateCommand(cStr, con);             // create the command
-
-        try
-        {
-            int numEffected = cmd.ExecuteNonQuery(); // execute the command
-            return numEffected;
-        }
-        catch (Exception ex)
-        {
-            throw (ex);
-        }
-
-        finally
-        {
-            if (con != null)
-            {
-                // close the db connection
-                con.Close();
-            }
-        }
-    }
 }
 
 

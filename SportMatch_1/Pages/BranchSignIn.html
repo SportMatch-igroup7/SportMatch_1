@@ -5,6 +5,12 @@
     <title></title>
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.3.1.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
     <script src="../Scripts/ajaxCalls.js"></script>
     <script>
         $(document).ready(function () {
@@ -12,12 +18,13 @@
             ajaxCall("GET", "../api/Company", "", successGetCompany, errorGetCompany);
             ajaxCall("GET", "../api/Link", "", successGetLink, errorGetLink);
             $("#pForm").submit(f1);
-            $("#btn").click(SignInBranch);
+            $("#btn").click(checkDetails);
 
         });
         function f1() {
             return false;
         }
+
 
         function successGetAreas(data) {
             console.log("im in success");
@@ -45,6 +52,9 @@
             console.log(err);
         }
 
+        var numLinks = 0;
+        var linkPath = []; //arr to save the link that was inserted by the user
+        var linkCode = []; //arr for the id's of the input forms
         function successGetLink(data)
         {
             console.log(data);
@@ -52,7 +62,9 @@
             let arrLinks = "";
             for (k in data) {
                 arrLinks += `<label for="fname">${data[k].LinkName}:</label>
-                            <input id=${data[k].LinkName} type="text" id="bname" name="bname"><br>`;
+                            <input id=${data[k].LinkCode} type="text" id="bname" name="bname"><br>`;
+                numLinks += 1;
+                linkCode[numLinks] = data[k].LinkCode;
             }
             $('#blinks').append(arrLinks);
             
@@ -63,12 +75,64 @@
             console.log(err);
         }
 
+        function checkDetails() {
+            email = document.getElementById("bmail").value;
+            password = document.getElementById("bpassword").value;
+
+            var m = validateEmail(email);
+            var p = validatePassword(password);
+
+            if (m == true && p == true)
+                ajaxCall("Get", "../api/User/getUser", "email=" + email, successGetUser, errorGetUser);
+        }
+
+        function successGetUser(data)
+        {
+            console.log(data);
+            if (data.length > 0)
+                alert("האימייל כבר קיים במערכת")
+            else
+            SignInBranch();
+        }
+
+        function errorGetUser(err)
+        {
+            console.log(err);
+        }
+
+        function validateEmail(e) {
+            var mailformat = /^\w+([\.-]?\w+)@\w+([\.-]?\w+)(\.\w{2,3})+$/;
+            if (e.match(mailformat)) {
+                //document.pForm.email.focus();
+                return true;
+            }
+            else {
+                alert("האימייל שהוזן לא תקין");
+                //document.pForm.email.focus();
+                return false;
+            }
+        }
+
+        function validatePassword(p) {
+            console.log(p.length)
+            if (p.length >= 6) {
+                //document.pForm.password.focus();
+                return true;
+            }
+            else {
+                alert("הסיסמה שהוזנה לא תקינה. נא להזין סיסמה ארוכה מ-6 תווים");
+                // document.pForm.password.focus();
+                return false;
+            }
+        }
+
+
+        var email = '';
         function SignInBranch() {
             var name = document.getElementById("bname").value;
             var address = document.getElementById("baddress").value;
-            var city = document.getElementById("bcity").value;
             var phoneNo = document.getElementById("bphone").value;
-            var email = document.getElementById("bmail").value;
+                email = document.getElementById("bmail").value;
             var description = document.getElementById("bdescription").value;
             var companyNo = document.getElementById("companyno").value;
             var password = document.getElementById("bpassword").value;
@@ -76,7 +140,6 @@
             branch = {
                 Name: name,
                 Address: address,
-                City: city,
                 PhoneNo: phoneNo,
                 Email: email,
                 Description: description,
@@ -88,16 +151,55 @@
             ajaxCall("POST", "../api/Branch", JSON.stringify(branch), successSignInBranch, errorSignInBranch);
         }
 
-
+        var BranchCodeFromDB = '';
         function successSignInBranch(data) {
-            alert("success");
+            console.log(data);
+            BranchCodeFromDB = data.BranchCode;
+            insertBranchLinks();
 
         }
 
         function errorSignInBranch(err) {
-            alert("error");
             console.log(err);
         }
+
+        function insertBranchLinks()
+        {
+         console.log("in insertBranchLinks");
+            for (var i = 1; i <= numLinks; i++) {
+                //insert the user value to arr
+                if (document.getElementById(linkCode[i]).value!="")
+                linkPath[i] = document.getElementById(linkCode[i]).value;
+            }
+                for (var j = 1; j <= numLinks; j++) {
+                    linksTo = {
+                        BranchCode: BranchCodeFromDB,
+                        LinkName: linkPath[j],
+                        LinkCode: linkCode[j]
+                    }
+                    console.log(linksTo);
+                    console.log(JSON.stringify(linksTo));
+                    ajaxCall("POST", "../api/LinksTo", JSON.stringify(linksTo), successInsertlinksTo, errorInsertlinksTo);
+
+                }
+
+                console.log("good!");
+        }
+
+        function successInsertlinksTo(data)
+        {
+            swal("Good job!", "success", "success");
+            console.log(data);
+            console.log("success insert linksTo");
+            localStorage["userDetails"] = BranchCodeFromDB;
+            window.location.href = 'BranchIndex.html'
+        }
+
+        function errorInsertlinksTo(err)
+        {
+            console.log(err);
+        }
+
     </script>
 </head>
 <body>

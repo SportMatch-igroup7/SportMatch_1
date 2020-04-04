@@ -10,7 +10,7 @@ namespace SportMatch_1.Models
     {
         int pcode;
         string pname;
-        
+
 
         public string Pname { get => pname; set => pname = value; }
         public int Pcode { get => pcode; set => pcode = value; }
@@ -43,5 +43,8 @@ namespace SportMatch_1.Models
             int numAffected = dbs.InsertParameter(this);
             return numAffected;
         }
+
+
+
     }
 }
